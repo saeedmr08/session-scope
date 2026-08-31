@@ -1,0 +1,231 @@
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(240, 217, 168, 0.35);
+  padding: 1.35rem 1.25rem 1.5rem;
+  animation: slideUp 0.55s ease-out 0.12s both;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.danger {
+  border: none;
+  background: var(--coral);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.55rem 0.95rem;
+  border-radius: 2px;
+}
+
+.danger:hover {
+  filter: brightness(1.05);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-left: 4px solid var(--ok);
+  box-shadow: 0 8px 24px rgba(11, 42, 50, 0.08);
+}
+
+.itemMain {
+  min-width: 0;
+}
+
+.device {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 0 0 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.statusActive,
+.statusRevoked,
+.statusKilled {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.4rem;
+}
+
+.statusActive {
+  background: rgba(42, 157, 143, 0.15);
+  color: var(--ok);
+}
+
+.statusRevoked {
+  background: rgba(14, 36, 41, 0.08);
+  color: #555;
+}
+
+.statusKilled {
+  background: rgba(155, 77, 77, 0.15);
+  color: var(--dead);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #4a666c;
+}
+
+.ua {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  color: #4a666c;
+}
+
+.seen {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6a8086;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: stretch;
+}
+
+.btn,
+.btnWarn,
+.btnDanger {
+  border: 1px solid #c5d8d4;
+  background: #f7fbfa;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 2px;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.btnWarn {
+  border-color: #e0b35a;
+  color: #8a5a12;
+}
+
+.btnDanger {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+.btn:disabled,
+.btnWarn:disabled,
+.btnDanger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.footerGrid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.sub {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-family: var(--font-display);
+}
+
+.empty {
+  margin: 0;
+  color: #5a7278;
+  font-size: 0.9rem;
+}
+
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+  max-height: 12rem;
+  overflow: auto;
+}
+
+.log li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.45rem 0.5rem;
+  background: rgba(11, 42, 50, 0.06);
+  border-left: 3px solid var(--sand);
+}
+
+.pre {
+  margin: 0;
+  padding: 0.75rem;
+  background: var(--deep);
+  color: var(--foam);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  overflow: auto;
+  max-height: 12rem;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .item {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+}
